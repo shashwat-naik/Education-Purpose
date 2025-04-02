@@ -29,8 +29,19 @@ class _MyAppState extends State<MyApp> {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+  HomeScreen({super.key});
+  final List<String> hashtags = [
+    '#Health',
+    '#Fitness',
+    '#Wellness',
+    '#Nutrition',
+    '#Mindset',
+    '#Yoga',
+    '#Exercise',
+    '#Meditation',
+    '#SelfCare',
+    '#Happiness'
+  ];
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -121,10 +132,32 @@ class HomeScreen extends StatelessWidget {
                   child: IconButton(
                     onPressed: () {},
                     icon: Image.asset('assets/search_icon.png'),
-                    
                   ),
-                )
+                ),
               ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            height: 16,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: hashtags.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 38),
+                  child: Text(
+                    hashtags[index],
+                    style: kPoppinsMedium.copyWith(
+                      color: kGrey,
+                      fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                    ),
+                  ),
+                );
+              },
             ),
           )
         ],
