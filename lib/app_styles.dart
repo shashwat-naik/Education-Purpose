@@ -16,6 +16,10 @@ const Color kDarkBlue = Color(0xff19202d);
 
 const double kBorderRadius = 16.0;
 
+final kBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(kBorderRadius),
+    borderSide: BorderSide.none);
+
 final kPoppinsBold = GoogleFonts.poppins(
   color: kDarkBlue,
   fontWeight: FontWeight.w700,

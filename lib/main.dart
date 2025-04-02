@@ -94,15 +94,36 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                    child: TextField(
-                  style: kPoppinsRegular.copyWith(
-                      color: kBlue,
-                      fontSize: SizeConfig.blockSizeHorizontal! * 3),
-                      controller: TextEditingController(),
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 13)
-                      ),
-                ))
+                  child: TextField(
+                    style: kPoppinsRegular.copyWith(
+                        color: kBlue,
+                        fontSize: SizeConfig.blockSizeHorizontal! * 3),
+                    controller: TextEditingController(),
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(horizontal: 13),
+                      hintText: 'Search for articles',
+                      border: kBorder,
+                      errorBorder: kBorder,
+                      disabledBorder: kBorder,
+                      focusedBorder: kBorder,
+                      focusedErrorBorder: kBorder,
+                      hintStyle: kPoppinsRegular.copyWith(
+                          color: kLightGrey,
+                          fontSize: SizeConfig.blockSizeHorizontal! * 3),
+                    ),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: kBlue,
+                    borderRadius: BorderRadius.circular(kBorderRadius),
+                  ),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Image.asset('assets/search_icon.png'),
+                    
+                  ),
+                )
               ],
             ),
           )
