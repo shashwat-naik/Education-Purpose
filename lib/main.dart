@@ -101,8 +101,6 @@ class HomeScreen extends StatelessWidget {
                   color: kLightBlue,
                   borderRadius: BorderRadius.circular(kBorderRadius),
                   image: const DecorationImage(
-                    // image: NetworkImage(
-                    // 'https://cdn3d.iconscout.com/3d/premium/thumb/man-avatar-3d-icon-download-in-png-blend-fbx-gltf-file-formats--men-people-male-pack-avatars-icons-5187871.png?f=webp')
                     image: AssetImage('assets/avatar.png'),
                   ),
                 ),
@@ -234,7 +232,6 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Container(
                         height: 184,
-                        // height: 164,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(kBorderRadius),
                           color: kWhite,
@@ -368,6 +365,8 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Container(
                           width: 70,
+                          height: 70,
+                          padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(kBorderRadius),
                             image: DecorationImage(
@@ -375,6 +374,7 @@ class HomeScreen extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                           ),
+                          child: Image.asset('assets/play.png'),
                         ),
                         SizedBox(
                           width: 12,
