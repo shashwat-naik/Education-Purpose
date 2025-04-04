@@ -282,6 +282,105 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Shorts for you',
+                style: kPoppinsBold.copyWith(
+                  fontSize: SizeConfig.blockSizeHorizontal! * 4.5,
+                ),
+              ),
+              Text(
+                'View All',
+                style: kPoppinsSemibold.copyWith(
+                  color: kBlue,
+                  fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            height: 80,
+            child: ListView.builder(
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.only(right: 20),
+                    width: 208,
+                    height: 88,
+                    decoration: BoxDecoration(
+                      color: kWhite,
+                      borderRadius: BorderRadius.circular(kBorderRadius),
+                      boxShadow: [
+                        BoxShadow(
+                          color: kDarkBlue.withOpacity(0.051),
+                          offset: Offset(0.0, 3.0),
+                          blurRadius: 24.0,
+                          spreadRadius: 0.0,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 70,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(kBorderRadius),
+                            image: DecorationImage(
+                              image: AssetImage(articleImg[index % 4]),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        Flexible(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Top Trending Islands in 2024',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: kPoppinsSemibold.copyWith(
+                                  fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Row(
+                                children: [
+                                  Image.asset('assets/eye.png'),
+                                  SizedBox(
+                                    width: 6,
+                                  ),
+                                  Text(
+                                    '40,999',
+                                    style: kPoppinsMedium.copyWith(
+                                      color: kGrey,
+                                      fontSize:
+                                          SizeConfig.blockSizeHorizontal! * 3,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+          )
         ],
       ),
     );
