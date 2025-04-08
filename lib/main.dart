@@ -1,3 +1,4 @@
+import 'package:education_purpose/news_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'app_styles.dart';
 import 'size_config.dart';
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: kLighterWhite,
-        body: HomeScreen(),
+        body: NewsDetailScreen(),
         bottomNavigationBar: BottomNavigationBar(
           elevation: 0,
           type: BottomNavigationBarType.fixed,
