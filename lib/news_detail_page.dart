@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:education_purpose/size_config.dart';
 import 'package:education_purpose/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 class NewsDetailScreen extends StatelessWidget {
   const NewsDetailScreen({super.key});
@@ -17,7 +17,7 @@ class NewsDetailScreen extends StatelessWidget {
         children: [
           Stack(
             children: [
-              const FullScreenSlider(),
+              FullScreenSlider(),
             ],
           ),
         ],
@@ -43,7 +43,7 @@ class FullScreenSlider extends StatefulWidget {
 
 class _FullScreenSliderState extends State<FullScreenSlider> {
   int _current = 1;
-  final CarouselController _controller = CarouselController();
+  final CarouselSliderController _controller = CarouselSliderController();
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -64,7 +64,7 @@ class _FullScreenSliderState extends State<FullScreenSlider> {
           items: imgList
               .map(
                 (item) => Center(
-                  child: Image.network(
+                  child: Image.asset(
                     item,
                     fit: BoxFit.cover,
                     height: SizeConfig.blockSizeVertical! * 50,
@@ -83,22 +83,22 @@ class _FullScreenSliderState extends State<FullScreenSlider> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: imgList.asMap().entries.map(
-                    (entry) => GestureDetector(
-                      onTap: () => _controller.animateToPage(entry.key),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 6,
-                        ),
-                        child: SvgPicture.asset(
-                          _current == entry.key
-                              ? 'assets/carousel_indicator_enabled.svg'
-                              : 'assets/carousel_indicator_disabled.svg',
-                          height: 10,
-                          width: 10,
-                        ),
+                (entry) {
+                  return GestureDetector(
+                    onTap: () => _controller.animateToPage(entry.key),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 6),
+                      child: Image.asset(
+                        _current == entry.key
+                            ? 'assets/Carousel_indicator_enabled.png'
+                            : 'assets/Carousel_indicator_disabled.png',
+                        height: 10,
+                        width: 10,
                       ),
                     ),
-                  ),
+                  );
+                },
+              ).toList(), 
             ),
           ),
         ),
@@ -106,3 +106,5 @@ class _FullScreenSliderState extends State<FullScreenSlider> {
     );
   }
 }
+
+
