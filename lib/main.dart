@@ -31,6 +31,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: kLighterWhite,
         body: NewsDetailScreen(),
+        // body: HomeScreen(),
         bottomNavigationBar: BottomNavigationBar(
           elevation: 0,
           type: BottomNavigationBarType.fixed,
