@@ -18,7 +18,9 @@ class ProfileScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              SizedBox(height: 20,), // Used for creating space from top margin of phone (Personal Touch)
+              SizedBox(
+                height: 20,
+              ), // Used for creating space from top margin of phone (Personal Touch)
               Row(
                 children: [
                   SizedBox(
@@ -83,6 +85,19 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical! * 2.5,
+              ),
+              Text(
+                'Discover the world through the words of a seasoned travel news writer. Stay updated with the latest destinations, travel trends, and insider tips.',
+                style: kPoppinsMedium.copyWith(
+                  color: kGrey,
+                  fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                ),
+              ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical! * 2.5,
               ),
             ],
           ),
