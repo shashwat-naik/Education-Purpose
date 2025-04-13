@@ -1,4 +1,5 @@
 import 'package:education_purpose/news_detail_page.dart';
+import 'package:education_purpose/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'app_styles.dart';
 import 'size_config.dart';
@@ -30,7 +31,8 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: kLighterWhite,
-        body: NewsDetailScreen(),
+        body: ProfileScreen(),
+        // body: NewsDetailScreen(),
         // body: HomeScreen(),
         bottomNavigationBar: BottomNavigationBar(
           elevation: 0,
