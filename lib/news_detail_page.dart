@@ -102,7 +102,9 @@ class NewsDetailScreen extends StatelessWidget {
                 horizontal: kPaddingHorizontal,
                 vertical: 20,
               ),
-              // padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal!*2.5,
+              padding: EdgeInsets.symmetric(
+                horizontal: SizeConfig.blockSizeHorizontal! * 2.5,
+              ),
               height: 54,
               width: double.infinity,
               decoration: BoxDecoration(
@@ -173,7 +175,7 @@ class FullScreenSlider extends StatefulWidget {
 }
 
 class _FullScreenSliderState extends State<FullScreenSlider> {
-  int _current = 1;
+  int _current = 0;
   final CarouselSliderController _controller = CarouselSliderController();
   @override
   Widget build(BuildContext context) {
