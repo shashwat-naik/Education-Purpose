@@ -9,6 +9,11 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
 
+    final List<String> postImg = [
+      'assets/post1.png',
+      'assets/post2.png',
+    ];
+
     return Scaffold(
       backgroundColor: kLighterWhite,
       body: SingleChildScrollView(
@@ -101,8 +106,8 @@ class ProfileScreen extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: SizeConfig.blockSizeHorizontal! * 3,
-                  vertical: SizeConfig.blockSizeVertical! * 3.5,
+                  horizontal: SizeConfig.blockSizeHorizontal! * 2.5,
+                  vertical: SizeConfig.blockSizeVertical! * 3,
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
@@ -194,6 +199,143 @@ class ProfileScreen extends StatelessWidget {
               ),
               SizedBox(
                 height: SizeConfig.blockSizeVertical! * 2.5,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Naik\'s Post',
+                    style: kPoppinsBold.copyWith(
+                        color: kDarkBlue,
+                        fontSize: SizeConfig.blockSizeHorizontal! * 4),
+                  ),
+                  Text(
+                    'View All',
+                    style: kPoppinsMedium.copyWith(
+                        color: kBlue,
+                        fontSize: SizeConfig.blockSizeHorizontal! * 3),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical! * 1,
+              ),
+              SizedBox(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 2,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      height: 95,
+                      margin: EdgeInsets.only(
+                        bottom: SizeConfig.blockSizeVertical! * 0.5,
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 85,
+                            width: 85,
+                            padding: const EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: kWhite,
+                              borderRadius:
+                                  BorderRadius.circular(kBorderRadius),
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 24,
+                                  spreadRadius: 0,
+                                  offset: const Offset(0, 3),
+                                  color: kDarkBlue.withOpacity(0.051),
+                                ),
+                              ],
+                            ),
+                            child: ClipRRect(
+                              borderRadius:
+                                  BorderRadius.circular(kBorderRadius),
+                              child: Image.asset(
+                                postImg[index],
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: SizeConfig.blockSizeVertical! * 2.5,
+                          ),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'News: Travel',
+                                  style: kPoppinsRegular.copyWith(
+                                    color: kGrey,
+                                    fontSize:
+                                        SizeConfig.blockSizeHorizontal! * 3,
+                                  ),
+                                ),
+                                Text(
+                                  'Top places to visit.',
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: kPoppinsSemibold.copyWith(
+                                    color: kDarkBlue,
+                                    fontSize:
+                                        SizeConfig.blockSizeHorizontal! * 3.5,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: SizeConfig.blockSizeVertical! * 1,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Image.asset('assets/calender.png'),
+                                        SizedBox(
+                                      width: SizeConfig.blockSizeHorizontal! * 1.8,
+                                    ),
+                                        Text(
+                                          '10th Nov',
+                                          style: kPoppinsRegular.copyWith(
+                                            color: kGrey,
+                                            fontSize:
+                                                SizeConfig.blockSizeHorizontal! *
+                                                    2.8,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Image.asset('assets/time.png'),
+                                        SizedBox(
+                                      width: SizeConfig.blockSizeHorizontal! * 1.8,
+                                    ),
+                                        Text(
+                                          '09:30 pm',
+                                          style: kPoppinsRegular.copyWith(
+                                            color: kGrey,
+                                            fontSize:
+                                                SizeConfig.blockSizeHorizontal! *
+                                                    2.8,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
             ],
           ),
