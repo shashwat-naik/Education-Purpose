@@ -99,6 +99,102 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(
                 height: SizeConfig.blockSizeVertical! * 2.5,
               ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: SizeConfig.blockSizeHorizontal! * 3,
+                  vertical: SizeConfig.blockSizeVertical! * 3.5,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    kBorderRadius,
+                  ),
+                  color: kDarkBlue,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Text(
+                            '54.21k',
+                            style: kPoppinsBold.copyWith(
+                              color: kWhite,
+                              fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                            ),
+                          ),
+                          Text(
+                            'Followers',
+                            style: kPoppinsMedium.copyWith(
+                              color: kWhite,
+                              fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 1,
+                      height: SizeConfig.blockSizeVertical! * 4,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2),
+                        color: kLighterBlue,
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Text(
+                            '2.11k',
+                            style: kPoppinsBold.copyWith(
+                              color: kWhite,
+                              fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                            ),
+                          ),
+                          Text(
+                            'Posts',
+                            style: kPoppinsMedium.copyWith(
+                              color: kWhite,
+                              fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 1,
+                      height: SizeConfig.blockSizeVertical! * 4,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2),
+                        color: kLighterBlue,
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Text(
+                            '3.6k',
+                            style: kPoppinsBold.copyWith(
+                              color: kWhite,
+                              fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                            ),
+                          ),
+                          Text(
+                            'Following',
+                            style: kPoppinsMedium.copyWith(
+                              color: kWhite,
+                              fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical! * 2.5,
+              ),
             ],
           ),
         ),
