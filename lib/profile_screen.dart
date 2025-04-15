@@ -13,6 +13,12 @@ class ProfileScreen extends StatelessWidget {
       'assets/post1.png',
       'assets/post2.png',
     ];
+    final List<String> PopArticle = [
+      'assets/article_img.png',
+      'assets/article_img1.png',
+      'assets/article_img2.png',
+      'assets/article_img3.png',
+    ];
 
     return Scaffold(
       backgroundColor: kLighterWhite,
@@ -290,21 +296,24 @@ class ProfileScreen extends StatelessWidget {
                                   height: SizeConfig.blockSizeVertical! * 1,
                                 ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       children: [
                                         Image.asset('assets/calender.png'),
                                         SizedBox(
-                                      width: SizeConfig.blockSizeHorizontal! * 1.8,
-                                    ),
+                                          width:
+                                              SizeConfig.blockSizeHorizontal! *
+                                                  1.8,
+                                        ),
                                         Text(
                                           '10th Nov',
                                           style: kPoppinsRegular.copyWith(
                                             color: kGrey,
-                                            fontSize:
-                                                SizeConfig.blockSizeHorizontal! *
-                                                    2.8,
+                                            fontSize: SizeConfig
+                                                    .blockSizeHorizontal! *
+                                                2.8,
                                           ),
                                         ),
                                       ],
@@ -313,15 +322,17 @@ class ProfileScreen extends StatelessWidget {
                                       children: [
                                         Image.asset('assets/time.png'),
                                         SizedBox(
-                                      width: SizeConfig.blockSizeHorizontal! * 1.8,
-                                    ),
+                                          width:
+                                              SizeConfig.blockSizeHorizontal! *
+                                                  1.8,
+                                        ),
                                         Text(
                                           '09:30 pm',
                                           style: kPoppinsRegular.copyWith(
                                             color: kGrey,
-                                            fontSize:
-                                                SizeConfig.blockSizeHorizontal! *
-                                                    2.8,
+                                            fontSize: SizeConfig
+                                                    .blockSizeHorizontal! *
+                                                2.8,
                                           ),
                                         ),
                                       ],
@@ -337,6 +348,47 @@ class ProfileScreen extends StatelessWidget {
                   },
                 ),
               ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical! * 2.5,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Popular from Naik',
+                    style: kPoppinsBold.copyWith(
+                        color: kDarkBlue,
+                        fontSize: SizeConfig.blockSizeHorizontal! * 4),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical! * 2.5,
+              ),
+              SizedBox(
+                height: 143,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      height: 143,
+                      width: 248,
+                      margin: EdgeInsets.only(
+                        right: SizeConfig.blockSizeHorizontal! * 2.5,
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(kBorderRadius),
+                        child: Image.asset(
+                          PopArticle[index % PopArticle.length],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),
